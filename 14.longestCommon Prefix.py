@@ -14,12 +14,11 @@ class Solution:
 
         prefix = strs[0]
         length = len(prefix)
-        length_list = len(strs)
         if len(prefix) == 0:
             return ""
 
         for string in strs:
-            # compare and subtract mostly
+            # compare and subtract
             while length > 0 and prefix[0:length] != string[0:length]:
                 length = length -1
                 if length == 0:
