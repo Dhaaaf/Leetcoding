@@ -4,11 +4,14 @@
 
 # You may assume that the input list is non-empty and the index is not greater than the length of the input list.
 
-# My solution:
 class Node:
   def __init__(self, val):
     self.val = val
     self.next = None
+
+
+
+# My solution:
 
 def insert_node(head, value, index):
   new = Node(value)

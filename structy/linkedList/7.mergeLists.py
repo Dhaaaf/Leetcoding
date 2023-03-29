@@ -4,12 +4,13 @@
 
 # You may assume that both input lists are non-empty and contain increasing sorted numbers.
 
-# My iterative solutoin:
 
 class Node:
   def __init__(self, val):
     self.val = val
     self.next = None
+
+# My iterative solutoin:
 
 def merge_lists(head_1, head_2):
   tail = None
