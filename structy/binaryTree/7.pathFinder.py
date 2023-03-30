@@ -3,8 +3,6 @@
 # You may assume that the tree contains unique values.
 
 
-
-
 # O(n) solution with helper function
 
 def path_finder(root, target):
