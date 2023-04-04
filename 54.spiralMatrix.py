@@ -12,12 +12,6 @@ class Solution:
         left, right = 0, len(matrix[0])
         top, bottom = 0, len(matrix)
 
-        # top 2
-        # right 2
-        # bottom 2
-        # left 1
-
-        # 1, 2, 3,  6, 9, 8, 7, 4, 5
 
         while left < right and top < bottom:
             # Get top row
