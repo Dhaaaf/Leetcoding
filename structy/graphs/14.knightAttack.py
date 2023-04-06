@@ -12,7 +12,7 @@
 # The function should return a number representing the minimum number of moves required for the knight to land ontop of the pawn. The knight cannot move out-of-bounds of the board. You can assume that rows and columns are 0-indexed. This means that if n = 8, there are 8 rows and 8 columns numbered 0 to 7. If it is not possible for the knight to attack the pawn, then return None
 
 
-# Mine and Alvin's solution:
+# My solution:
 
 from collections import deque
 
@@ -51,3 +51,43 @@ def valid_position(n, r, c):
   if 0 <= r < n and 0 <= c < n:
     return True
   return False
+
+
+
+# Alvin's solution:
+
+from collections import deque
+
+def knight_attack(n, kr, kc, pr, pc):
+  visited = set();
+  visited.add((kr, kc))
+  queue = deque([ (kr, kc, 0) ])
+  while len(queue) > 0:
+    r, c, step = queue.popleft();
+    if (r, c) == (pr, pc):
+      return step
+    neighbors = get_knight_moves(n, r, c)
+    for neighbor in neighbors:
+      neighbor_row, neighbor_col = neighbor
+      if neighbor not in visited:
+        visited.add(neighbor)
+        queue.append((neighbor_row, neighbor_col, step + 1))
+  return None
+
+def get_knight_moves(n, r, c):
+  positions = [
+    ( r + 2, c + 1 ),
+    ( r - 2, c + 1 ),
+    ( r + 2, c - 1 ),
+    ( r - 2, c - 1 ),
+    ( r + 1, c + 2 ),
+    ( r - 1, c + 2 ),
+    ( r + 1, c - 2 ),
+    ( r - 1, c - 2 ),
+  ]
+  inbounds_positions = [];
+  for pos in positions:
+    new_row, new_col = pos
+    if 0 <= new_row < n and 0 <= new_col < n:
+      inbounds_positions.append(pos)
+  return inbounds_positions
