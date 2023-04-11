@@ -1,4 +1,13 @@
-# Did a mock interview over google doc today with my coach. Will give you the same question next time we pairboard. It was a pretty good one
+# // Given an array of arrays where the inner array represents a server's uptime. Each element representing 1 hr.
+
+# // Server will always start true or reset true.
+
+# // Return an array of arrays where the inner arrays have server uptime ratio.
+
+# // eg
+
+# // input: [ [true, true, true, false, false, false], [true, false], [true, true, false] ]
+# // output: [ [0.50], [0.50], [0.67] ]
 
 def server_uptime_ratio(servers):
     res = []
