@@ -1,8 +1,9 @@
-# Given an integer array nums of unique elements, return all possible 
-# subsets
-#  (the power set).
+# Write a function, subsets, that takes in a list as an argument. The function should return a 2D list where each sublist represents one of the possible subsets of the list.
 
-# The solution set must not contain duplicate subsets. Return the solution in any order.
+# The elements within the subsets and the subsets themselves may be returned in any order.
+
+# You may assume that the input list contains unique elements.
+
 
 # Iterative
 
