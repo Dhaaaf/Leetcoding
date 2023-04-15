@@ -15,5 +15,5 @@ def permutations(items):
   for perm in perms:
     for i in range(len(perm) + 1):
       result.append([*perm[:i], item, *perm[i:]])
-  
+      
   return result
