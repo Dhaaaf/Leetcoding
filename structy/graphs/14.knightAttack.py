@@ -63,11 +63,6 @@ def knight_moves (n, r, c):
   return [(row, col) for (row, col) in positions if 0 <= r < n and 0 <= c < n ]
       
 
-# def valid_position(n, r, c):
-#   if 0 <= r < n and 0 <= c < n:
-#     return True
-#   return False
-
 
 
 # Alvin's solution:
