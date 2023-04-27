@@ -17,6 +17,7 @@ var tictactoe = function(moves) {
     // Fill the grid with the moves
     for (let i = 0; i < n; i++) {
         const [row, col] = moves[i];
+        // checks for even or odd
         grid[row][col] = i % 2 === 0 ? 'X' : 'O';
     }
     // Check for a winner
@@ -24,13 +25,16 @@ var tictactoe = function(moves) {
         // Check rows, columns, and diagonals
         for (let i = 0; i < 3; i++) {
             if (
+                // Row
                 (grid[i][0] === player && grid[i][1] === player && grid[i][2] === player) ||
+                // Column
                 (grid[0][i] === player && grid[1][i] === player && grid[2][i] === player)
                 ) {
                     return true;
                 }
             }
         return (
+            // Diagnal conditions
             (grid[0][0] === player && grid[1][1] === player && grid[2][2] === player) ||
             (grid[0][2] === player && grid[1][1] === player && grid[2][0] === player)
             );
