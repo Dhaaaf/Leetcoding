@@ -13,40 +13,35 @@
 
 var tictactoe = function(moves) {
     const grid = Array.from({ length: 3 }, () => Array(3).fill(' '));
-  const n = moves.length;
-
-  // Fill the grid with the moves
-  for (let i = 0; i < n; i++) {
-    const [row, col] = moves[i];
-    grid[row][col] = i % 2 === 0 ? 'X' : 'O';
-  }
-
-  // Check for a winner
-  const checkWinner = (player) => {
-    // Check rows, columns, and diagonals
-    for (let i = 0; i < 3; i++) {
-      if (
-        (grid[i][0] === player && grid[i][1] === player && grid[i][2] === player) ||
-        (grid[0][i] === player && grid[1][i] === player && grid[2][i] === player)
-      ) {
-        return true;
-      }
+    const n = moves.length;
+    // Fill the grid with the moves
+    for (let i = 0; i < n; i++) {
+        const [row, col] = moves[i];
+        grid[row][col] = i % 2 === 0 ? 'X' : 'O';
     }
-
-    return (
-      (grid[0][0] === player && grid[1][1] === player && grid[2][2] === player) ||
-      (grid[0][2] === player && grid[1][1] === player && grid[2][0] === player)
-    );
-  };
-
-  if (checkWinner('X')) {
-    return 'A';
-  }
-
-  if (checkWinner('O')) {
-    return 'B';
-  }
-
-  // If all squares are filled, it's a draw; otherwise, the game is pending
-  return n === 9 ? 'Draw' : 'Pending';
+    // Check for a winner
+    const checkWinner = (player) => {
+        // Check rows, columns, and diagonals
+        for (let i = 0; i < 3; i++) {
+            if (
+                (grid[i][0] === player && grid[i][1] === player && grid[i][2] === player) ||
+                (grid[0][i] === player && grid[1][i] === player && grid[2][i] === player)
+                ) {
+                    return true;
+                }
+            }
+        return (
+            (grid[0][0] === player && grid[1][1] === player && grid[2][2] === player) ||
+            (grid[0][2] === player && grid[1][1] === player && grid[2][0] === player)
+            );
+    };
+    
+    if (checkWinner('X')) {
+        return 'A';
+    }
+    if (checkWinner('O')) {
+        return 'B';
+    }
+    // If all squares are filled, it's a draw; otherwise, the game is pending
+    return n === 9 ? 'Draw' : 'Pending';
 };
