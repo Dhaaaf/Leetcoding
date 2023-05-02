@@ -3,7 +3,7 @@
 
 
 
-
+# Merge Sort with helper function
 from collections import deque
 
 def merge_sort(nums):
