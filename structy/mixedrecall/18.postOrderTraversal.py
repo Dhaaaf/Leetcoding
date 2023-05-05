@@ -28,3 +28,17 @@ def post_order(root):
             stack.append((node.left, False))
             
     return result
+
+
+# Alvin's recursive post-order traversal
+def post_order(root):
+  values = []
+  post_order_traversal(root, values)
+  return values
+
+def post_order_traversal(root, values):
+  if root is None:
+    return 
+  post_order_traversal(root.left, values)
+  post_order_traversal(root.right, values)
+  values.append(root.val)
