@@ -23,7 +23,7 @@ class Solution:
         # return max_sum
 
 
-        # Dynamic Programming Question
+        # Dynamic Programming solution
 
         length_n = len(nums)
 
