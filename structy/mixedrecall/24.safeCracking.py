@@ -5,8 +5,6 @@
 # Write a function, safe_cracking, that takes in a list of hints as an argument and determines the combination that will unlock the safe. The function should return a string representing the combination.
 
 
-
-
 def safe_cracking(hints):
   graph = build_graph(hints)
   return topological_order(graph)

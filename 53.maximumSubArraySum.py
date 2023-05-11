@@ -4,24 +4,6 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
 
-        # brute force solution
-
-        # length_n = len(nums)
-
-        # if length_n == 1:
-        #     return nums[0]
-
-        # max_sum = nums[0]
-        
-        # for i in range(length_n -1):
-        #     current_sum = nums[i]
-        
-        #     for j in range(i + 1, length_n):
-        #         current_sum += nums[j]
-        #         max_sum = max(max_sum, current_sum, nums[j])
-
-        # return max_sum
-
 
         # Dynamic Programming solution
 
@@ -45,5 +27,27 @@ class Solution:
             max_sum = max(max_sum, sums[i])
 
         # sums array
+
+        return max_sum
+    
+
+
+    # Brute forcer solutions:
+
+def maxSubArray(self, nums: List[int]) -> int:
+
+        length_n = len(nums)
+
+        if length_n == 1:
+            return nums[0]
+
+        max_sum = nums[0]
+        
+        for i in range(length_n -1):
+            current_sum = nums[i]
+        
+            for j in range(i + 1, length_n):
+                current_sum += nums[j]
+                max_sum = max(max_sum, current_sum, nums[j])
 
         return max_sum

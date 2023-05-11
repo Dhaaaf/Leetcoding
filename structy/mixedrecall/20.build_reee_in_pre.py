@@ -3,7 +3,6 @@
 # You can assume that the values of inorder and preorder are unique.
 
 
-
 class Node:
   def __init__(self, val):
     self.val = val
