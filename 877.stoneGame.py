@@ -7,34 +7,43 @@
 # Assuming Alice and Bob play optimally, return true if Alice wins the game, or false if Bob wins.
 
 
+# Proper Solution:
+class Solution:
+    def stoneGame(self, piles: List[int]) -> bool:        
+        dp = {}
+
+        def dfs(l, r):
+            if l > r:
+                return 0
+            
+            if(l,r) in dp:
+                return dp[(l, r)]
+            
+            even = True if (r-1) % 2 else False
+
+            left = piles[l] if even else 0 
+            right = piles[r] if even else 0 
+            
+            dp[(l, r)] = max( dfs(l+1, r) + left, dfs(l, r-1) + right )
+
+            return dp[(l, r)]
+        
+        return dfs(0, len(piles - 1)) > (sum(piles) // 2)
+
+    
+
+
+
+
+
+
+
+
+
+
 
 
 # Imperfect solution
-from collections import deque
 class Solution:
     def stoneGame(self, piles: List[int]) -> bool:        
-        piles = deque(piles)
-        alice_counter= 0
-        bob_counter = 0
-        turn_counter= 0 
-        while piles:
-            if piles[0] > piles[-1]:
-                biggest_pile = piles[0]
-                biggest_index = 0
-            else:
-                biggest_pile = piles[-1]
-                biggest_index = -1
-            if turn_counter % 2 == 0:
-                alice_counter += biggest_pile
-                if biggest_index == 0:
-                    piles.popleft()
-                else:
-                    piles.pop()
-            else:
-                bob_counter += biggest_pile
-                if biggest_index == 0:
-                    piles.popleft()
-                else:
-                    piles.pop()    
-        turn_counter +=1    
-        return alice_counter > bob_counter 
+        return True
