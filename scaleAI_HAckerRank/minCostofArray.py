@@ -11,9 +11,6 @@
 
 
 
-
-
-
 def getMinimumCost(arr):
     # Write your code here
     # find neighbor has max difference
