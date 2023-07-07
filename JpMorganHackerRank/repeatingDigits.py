@@ -22,9 +22,6 @@ def count_numbers(ranges):
                 count += 1
         print(count)
 
-# Test the function
-ranges = [[80, 120], [10, 20]]
-count_numbers(ranges)
 
 
 ## Solution that doesn't time out:
@@ -41,6 +38,4 @@ def count_numbers(ranges):
     for n, m in ranges:
         print(lookup[m] - lookup[n-1] if n > 0 else lookup[m])
 
-# Test the function
-ranges = [[80, 120], [10, 20]]
-count_numbers(ranges)
+
